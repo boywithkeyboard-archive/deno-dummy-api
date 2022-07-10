@@ -1,6 +1,7 @@
 import { Application, Router } from 'https://deno.land/x/oak@v10.6.0/mod.ts'
 
 const app = new Application()
+
 , router = new Router()
 
 router.get('/', (ctx) => {
@@ -8,6 +9,7 @@ router.get('/', (ctx) => {
 })
 
 app.use(router.allowedMethods())
+
 app.use(router.routes())
 
 app.use(ctx => {
